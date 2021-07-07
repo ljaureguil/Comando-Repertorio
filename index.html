@@ -403,17 +403,60 @@ progress[value] {
   
   <textarea id="mmsg"></textarea>
  
-<script>
+<script>//https://raw.githubusercontent.com/ljaureguil/Geo/main/geopos.js
+
 var linkp='https://jsonblob.com/api/dd638cf7-de79-11eb-80f0-055ac14c8156';
+
+  function showobj(){
+    //  alert("gggg");
+ GetJ("https://jsonblob.com/api/e17b5980-1d62-11eb-ab21-2fc49933500c",function(r){alert(JSON.stringify(r))});
+  }
+
   chooseS=false;
- linkRep='https://jsonblob.com/api/e86e9eca-db67-11eb-bf92-631e03f93a7b';
+ //localStorage.removeItem("key");
+ /*
+ 
+var enc=cod("ljaureguil","linkGit='https://raw.githubusercontent.com/ljaureguil/Comando-Unico/master/Complacencias.txt';linkc='https://jsonblob.com/api/dd1dc37f-6728-11eb-82c8-83376f2319bc';linkRep='https://jsonblob.com/api/e86e9eca-db67-11eb-bf92-631e03f93a7b';pass=['andresjv','danieljv','laurojl'];")
+ alert(enc)
+var res=decod("ljaureguil",enc);
+iletra.value=enc;
+localStorage.setItem("keyRep",enc);
+
+eval(res)
+
+alert(linkRep)
+
+GetJ(linkRep,function(r){r.prim=enc;
+     UpdateJ(linkRep,r,function(){alert("chk...");
+     
+     })
+});
+ //linkRep='https://jsonblob.com/api/e86e9eca-db67-11eb-bf92-631e03f93a7b';
+
+var ss=localStorage.getItem("keyRep")
+alert(ss);
+
+alert("local storage\n\n"+decod("ljaureguil",ss));
+
+*/
+
+linkRep='https://jsonblob.com/api/e86e9eca-db67-11eb-bf92-631e03f93a7b';
+
+
 ObjRep={};
  var arn="a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,x,y,z,_,0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,x,y,z,_,0,1,2,3,4,5,6,7,8,9";
  arn=arn.split(",");
 p0={latitude: 37.8148543,longitude: -121.2896501}
 remotetimer=0;
 timerset=0;
+//localstorage.removeItem("app")
+//AppBk=localStorage.getItem("app");
+//alert(AppBk);
 var progressTimer=undefined,timerset=0;
+//postDoc("https://jsonblob.com/api/jsonBlob/2cf859d7-eec6-11ea-b1f3-6f02c0e4fe61",{"nombre":"lauro","apeido":"jauregui"},function(t){alert("eto es diecto "+t)})
+//linkRep='https://jsonblob.com/api/e86e9eca-db67-11eb-bf92-631e03f93a7b';
+  
+  //  linkRep='https://jsonblob.com/api/85e6ddf8-d5ec-11eb-8853-fb31258c7b15'
      icomplacencias=undefined;
      emsg = document.getElementById("mmsg");
      enota = document.getElementById("complac");
@@ -430,7 +473,7 @@ var progressTimer=undefined,timerset=0;
         inter1=undefined;
         inter2=undefined;
 
-    ionoff=undefined;
+    ionoff=undefined;//=setInterval("iniciargit()",1*60000);
  
 function getObj(l,callback) {
           loadText(l,function (r) {
@@ -442,12 +485,19 @@ function getObj(l,callback) {
 }
            nextRep=localStorage.getItem("NextRep");
         if(nextRep==null || nextRep =="") nextRep="";
-         marktocada=false;
-     tiempodetocar=60*60*1000;  
+      //  alert(nextRep)
+       marktocada=false;
+    
+  
+   tiempodetocar=60*60*1000;  
  kt=60*1000;
  websong="";
  runningTimer=null;
+ //verifyTimer();
+
+//    loadText("https://raw.githubusercontent.com/ljaureguil/Comando-Unico/master/Canc.txt",function(r){alert(r)})
     online=window.navigator.onLine;
+ //   alert(online)
     acordeon="",guitarra="";
 Element.prototype.appendBefore = function (element) {
     element.parentNode.insertBefore(this, element);
@@ -461,12 +511,41 @@ Element.prototype.appendAfter = function (element) {
   window.onerror = function(){
    return true;
 } 
+var arlinks=[];
+var txlinks="";
+//loadText("https://raw.githubusercontent.com/ljaureguil/Comando-Unico/master/Canc.txt",function(r){
+    if(online)loadText("https://raw.githubusercontent.com/ljaureguil/Comando-Unico/master/cc.txt",function(r){
+arlinks=r.split("\n");
+arlinks=arlinks.filter(function(ar){return ar !="" && ar !=undefined && ar.indexOf("*") < 0 });
+txlinks=r;
 
+localStorage.setItem("CancLinks",r)
+
+inic2();
+
+
+});
+else{
+   var r=localStorage.getItem("CancLinks");
+   if(r!=null){
+    arlinks=r.split("\n");
+arlinks=arlinks.filter(function(ar){return ar !="" && ar !=undefined && ar.indexOf("*") < 0 });
+txlinks=r;
+inic2();  
+   }
+   else alert("You are offline a and there is no back up")
+
+}
+
+    songs=[];
+    
 var eac=document.getElementById("bpl");
 var egu=document.getElementById("bplg");
 
 
  var x = document.getElementById("myAudio"); 
+//x.setAttribute("src","https://docs.google.com/uc?export=open&id=1ERqTEKUU8JSLNgu-jULjAhhc-cdSuoJP");//https://static.wixstatic.com/mp3/4ee8f5_21f59bb654b34bb3b2f2dcf7bc933e2c.mp3
+//x.onloadstart= x.play(); ;
 function playAudio() { 
  
   x.play().catch(e => e);; 
@@ -476,7 +555,13 @@ function pauseAudio() {
   x.pause(); 
 
 } 
-
+//https://docs.google.com/uc?export=open&id=1ERqTEKUU8JSLNgu-jULjAhhc-cdSuoJP");//https://static.wixstatic.com/mp3/4ee8f5_21f59bb654b34bb3b2f2dcf7bc933e2c.mp3
+  
+  function loadparam(){
+    ;  
+  }
+ 
+ 
  var Tocada="";
 var horast=1;
 var timewarning, timeout, timeover,test=false;
@@ -485,7 +570,30 @@ var timewarning, timeout, timeover,test=false;
         var repstate = true;
         var total = []
         var btit = true;
-      var tocadas=localStorage.getItem("tocadas");
+        var Letras=""; 
+        var letrasLocal=localStorage.getItem("letras");
+   //    alert(letrasLocal);
+    
+        
+        if(online) loadText("https://raw.githubusercontent.com/ljaureguil/Comando-Unico/master/Letras.txt",
+         function(r) {
+             Letras=r;
+             localStorage.setItem("letras",r);
+                   //  alert(r)
+
+
+
+
+
+
+             });
+             else{
+                Letras=localStorage.getItem("Letras");
+                if(Letras==null) Letras="";
+               
+             }
+
+   var tocadas=localStorage.getItem("tocadas");
         ele = document.getElementById("le");
         edle = document.getElementById("dle");
         eactrls = document.getElementById("audctrls");
@@ -501,7 +609,11 @@ var timewarning, timeout, timeover,test=false;
         ebarra = document.getElementById('barra');
         arindex = [];
         arsongs = [];
+
+         //    loadText('https://drive.google.com/open?id=1VU-tkhVUVDJke1m49YNcJiAfbnN_ZDYHEGxckW20KZM',function(r){alert(r.indexOf("libreta"))})
+         //////////////////////////////////////
   var clases=[];
+
  function proceso(ob){
     etitulo.innerHTML = ". . . Repertorio: "+ob.canciones.length+"+";
             var tcat=[];
@@ -594,6 +706,47 @@ else{
 }
  }
 
+     function inic2(){
+         var re={}
+         if(online){ loadText('https://raw.githubusercontent.com/ljaureguil/Comando-Unico/master/RepertorioOriginal.txt', function(cont) {
+            GetJ(linkRep,function(re){
+  
+           ObjRep=re; 
+
+            proceso(re);
+           localStorage.setItem("Repertorio",JSON.stringify(re))   ;
+
+             });
+      } ) ;    
+          
+            }
+        else{
+          var rep=localStorage.getItem("Repertorio");
+          if(rep!=null) proceso(JSON.stringify(rep));
+          alert("You are offline and there is not a backup")
+        }
+
+     }
+
+    function gtcls(arc){
+    var obs={main:"",subs:[]};
+        arc=arc.split("-");
+        var ar=[];
+        arc.forEach(element => {
+            clases.forEach(elem=>{
+                if(elem.id===element) ar.push(elem.clase);
+            })
+        });
+        //
+        obs.main=ar[0];
+
+
+    }    
+    function gtcl(c){
+    
+
+    }    
+         ///////////////////////////////////////   
 
         function loadText(file, callback) {
 
@@ -604,7 +757,8 @@ else{
             })
             }
            }
-         }
+ //     else {alert("You are offline...");callback("")}
+        }
  ///////////////////////////////////////////////////////////////////////////////
 
         function sortear2(filter) {
@@ -633,7 +787,17 @@ else{
       }
 
         var sch=ele.offsetHeight*1,scy=0,scintervalo=null,tiempo=500*60,sctiempo=0,iti=0,einicsld=document.getElementById("inicsld");
-  
+    function  movescroll(h,y){
+        sch=h;
+        scy=y;
+    //    app.ShowPopup(h+"\n\n"+y+"\n\n"+ele.offsetHeight);
+        
+    }
+    dilay=1000;   var cto; tiempo=1; var cc=0;
+    function inicScrolling2() {
+ 
+  }
+
  function setaudio(a){
 
 try{
@@ -645,7 +809,19 @@ catch(e){
     alert(e);
 }
  }
-  
+ 
+
+function fixlink(ll){// alert(ll)
+if(ll!=undefined){
+    var pp=ll.split("/view");
+               pp="https://docs.google.com/uc?export=open&id="+pp[0];
+              
+               return pp;
+}
+else return "";
+
+}
+ 
 function loadDoc(url,callback) {
   var xhttp = new XMLHttpRequest();
   
@@ -777,13 +953,19 @@ for (var i = 0; i < rre.length; i++) {
             i = rre.length;
         }
         if (chn.length === 4) {
-           }
+            //       if(chn.indexOf('{"s')===-1) return null }
+           // if (chn.indexOf('{') === -1) return null
+        }
 
     }
 
 }
-s = chn; 
+s = chn; //"";//String.fromCharCode(chn);
+// eval('s=String.fromCharCode('+chn+')');
 return s;
+//  if(s.indexOf(clv)>1) return s;
+//  else return null;
+
 }
 
 //localStorage.removeItem("clv")
@@ -814,11 +996,10 @@ function openDedicatoria(m){
         if(lcv===op.clave){
             var msg=""
               if(m!=undefined){
-                  var pp=prompt('para ?');
-                  if(pp!=null){
+                  var pp=prompt('para ?')
                   op.peticiones.push("Saludos para "+pp)
                   UpdateJ(linkp,op,function(){alert("Tu saludo a sido enviado")});
-                  }
+                   
                    }
             else {
                 chooseS=true;
@@ -828,9 +1009,7 @@ function openDedicatoria(m){
            
         }
         else{
-            localStorage.removeItem("clv");
-            alert("Clave a cambiado, Intentalo de nuevo");
-            openDedicatoria();
+            alert("Clave equivocada, preciona el boton de nuevo")
         }
 
     }
