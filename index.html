@@ -362,10 +362,7 @@ progress[value] {
 
 
     <div id="ctrls">
-             <button class="btns" onclick="document.body.style.background=' linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%)';openDedicatoria();">Pedir Cancion/saludo</button>
-            <button class="btns" onclick="document.body.style.background=' linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%)';openDedicatoria('dd');">Mandar Saludo</button>
-
-    </div>
+           </div>
      <div id="bclas"></div>
     <p id="titulo"></p>
     <div id="lirep">
@@ -389,9 +386,10 @@ progress[value] {
   <textarea id="mmsg"></textarea>
  
 <script>
-var linkp='https://jsonblob.com/api/dd638cf7-de79-11eb-80f0-055ac14c8156';
+//var linkp='https://jsonblob.com/api/dd638cf7-de79-11eb-80f0-055ac14c8156';
    chooseS=false;
-linkRep='https://jsonblob.com/api/e86e9eca-db67-11eb-bf92-631e03f93a7b';
+//linkRep='https://jsonblob.com/api/e86e9eca-db67-11eb-bf92-631e03f93a7b';
+var linkRep='https://jsonblob.com/api/1166458063128748032';//
 ObjRep={};
  var arn="a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,x,y,z,_,0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,x,y,z,_,0,1,2,3,4,5,6,7,8,9";
  arn=arn.split(",");
@@ -455,29 +453,7 @@ Element.prototype.appendAfter = function (element) {
 var arlinks=[];
 var txlinks="";
 inic2();
-/* if(online)loadText("https://raw.githubusercontent.com/ljaureguil/Comando-Unico/master/cc.txt",function(r){
-arlinks=r.split("\n");
-arlinks=arlinks.filter(function(ar){return ar !="" && ar !=undefined && ar.indexOf("*") < 0 });
-txlinks=r;
 
-localStorage.setItem("CancLinks",r)
-
-
-
-
-});
-else{
-   var r=localStorage.getItem("CancLinks");
-   if(r!=null){
-    arlinks=r.split("\n");
-arlinks=arlinks.filter(function(ar){return ar !="" && ar !=undefined && ar.indexOf("*") < 0 });
-txlinks=r;
-inic2();  
-   }
-   else alert("You are offline a and there is no back up")
-
-}
-*/
     songs=[];
     
 var eac=document.getElementById("bpl");
@@ -586,7 +562,7 @@ var timewarning, timeout, timeover,test=false;
         
  }
  function showletra2(el){
-if(chooseS){
+/*if(chooseS){
     var pt=prompt(el.cancion.toUpperCase()+" Dedicada para...?");
     if(pt!=null){
         if(pt!="") " ... para "+pt;
@@ -605,8 +581,8 @@ if(chooseS){
          chooseS=false;
         document.body.style.background=' linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%)'
  
-}
-else{
+}*/
+//else{
     if(el.letra!=""){ edle.style.display = "block";
               ele.value=el.letra;
               websong=el.cancion;
@@ -619,7 +595,7 @@ else{
 
             }
                      
-}
+//}
  }
 
      function inic2(){
@@ -825,6 +801,8 @@ for (var i = 0; i < rre.length; i++) {
 s = chn; 
 return s;
 }
+
+/*
 function openDedicatoria(m){
     var op={};
       var lcv=localStorage.getItem("clv"); 
@@ -875,7 +853,7 @@ function openDedicatoria(m){
 
 
 }
-
+*/
  
     </script>
 
